@@ -1,0 +1,23 @@
+{
+    "en": {
+        "title": "Login Page",
+        "welcome": "Welcome to SEE University Online Services",
+        "login": "Login",
+        "transcript": "Get Transcript",
+        "pay": "Pay Semester"
+    },
+    "sq": {
+        "title": "Faqja e Hyrjes",
+        "welcome": "Mirësevini në Shërbimet Online të Universitetit",
+        "login": "Hyr",
+        "transcript": "Merr Transkriptën",
+        "pay": "Paguaj Semestrin"
+    },
+    "mk": {
+        "title": "Страница за Најава",
+        "welcome": "Добредојдовте во Онлајн Услугите на Универзитетот",
+        "login": "Најава",
+        "transcript": "Земи Препис",
+        "pay": "Плати Семестар"
+    }
+}
