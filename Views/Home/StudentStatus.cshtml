@@ -1,0 +1,37 @@
+﻿@model SelfServiceStudentSystem.Models.StudentStatusViewModel
+
+<div style="max-width: 600px; margin: 40px auto; background-color: #C6E7FF; padding: 20px; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center;">
+    <img src="/images/university-logo.png" alt="Logo" style="width: 200px; margin-bottom: 10px;" />
+
+    <h2 style="color: #000957;">Dëshmi e Statusit</h2>
+    <p style="color: #000957;">Merr dëshmi për statusin tënd si student.</p>
+
+    <div style="text-align: left; margin-top: 20px;">
+        <p><strong>Emri dhe Mbiemri:</strong> @Model.StudentName</p>
+        <p><strong>Data e Lindjes:</strong> @Model.DateOfBirth.ToString("dd.MM.yyyy")</p>
+        <p><strong>Programi:</strong> @Model.Program</p>
+        <p><strong>Semestri:</strong> @Model.Semester</p>
+        <p><strong>Viti Akademik:</strong> @Model.AcademicYear</p>
+    </div>
+
+    <div style="margin: 20px 0;">
+        <label for="reason" style="font-weight: bold; color: #000957;">Zgjidh Arsyen:</label>
+        <select id="reason" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-top: 5px;">
+            <option value="Personal Needs">Personal Needs</option>
+            <option value="For Scholarship Application">For Scholarship Application</option>
+            <option value="For Bank Procedures">For Bank Procedures</option>
+            <option value="For Visa Application">For Visa Application</option>
+        </select>
+    </div>
+
+    <button id="downloadPdf" style="background-color: #000957; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%;">
+        Shkarko Dëshminë
+    </button>
+</div>
+
+<script>
+    document.getElementById("downloadPdf").addEventListener("click", function () {
+        var reason = document.getElementById("reason").value;
+        window.location.href = `/Home/DownloadStudentStatusPdf?reason=${encodeURIComponent(reason)}`;
+    });
+</script>

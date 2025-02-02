@@ -1,0 +1,194 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konfirmimi i Pagesës</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #C6E7FF;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .page-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        .confirm-box, .checkout-container {
+            max-width: 400px;
+            padding: 25px 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+        }
+
+            .confirm-box h2, .checkout-container h2 {
+                text-align: center;
+                color: #000957;
+            }
+
+            .confirm-box ul {
+                list-style: none;
+                padding: 0;
+            }
+
+                .confirm-box ul li {
+                    margin-bottom: 12px;
+                    font-size: 16px;
+                    background-color: #f0f8ff;
+                    padding: 8px;
+                    border-radius: 8px;
+                }
+
+                    .confirm-box ul li strong {
+                        color: #000957;
+                    }
+
+            .confirm-box .btn {
+                display: inline-block;
+                padding: 8px 20px;
+                background-color: #000957;
+                color: white;
+                font-size: 14px;
+                text-align: center;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                text-decoration: none;
+                margin: 0 auto;
+                display: block;
+                width: 50%;
+            }
+
+                .confirm-box .btn:hover {
+                    background-color: #003366;
+                }
+
+        .payment-icons {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Rrit hapësirën mes ikonave */
+            margin-bottom: 15px; /* Shto hapësirë poshtë ikonave */
+        }
+
+            .payment-icons img {
+                width: 60px; /* Rrit madhësinë e ikonave */
+                height: auto;
+                transition: transform 0.3s ease; /* Efekt hover */
+            }
+
+                .payment-icons img:hover {
+                    transform: scale(1.1); /* Rrit pak kur kalon miun sipër */
+                }
+
+
+        form div {
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .flex-container {
+            display: flex;
+            gap: 15px;
+        }
+
+            .flex-container div {
+                flex: 1;
+            }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #000957;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #003366;
+            }
+
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Konfirmimi i Pagesës -->
+        <div class="confirm-box">
+            <h2>Konfirmimi i Pagesës</h2>
+            <ul>
+                <li><strong>ID e Studentit:</strong> @Model.StudentId</li>
+                <li><strong>Programi:</strong> @(Model.StudyProgram?.ProgramName ?? "Nuk ka program")</li>
+                <li><strong>Semestri:</strong> @Model.Semester</li>
+                <li><strong>Shuma për Pagesë:</strong> @Model.Amount EUR</li>
+            </ul>
+            <a href="/Home/PaySemester" class="btn">Kthehu</a>
+        </div>
+
+        <!-- Checkout -->
+        <div class="checkout-container">
+            <h2>Checkout</h2>
+            <div class="payment-icons">
+                <img src="/images/MasterCard.png" alt="MasterCard">
+                <img src="/images/VisaCard.png" alt="Visa">
+                <img src="/images/PayPalCard.png" alt="PayPal">
+            </div>
+
+            <form method="post" action="@Url.Action("ProcessPayment", "Home")">
+                <!-- Hidden inputs për të ruajtur të dhënat e pagesës -->
+                <input type="hidden" name="studentId" value="@Model.StudentId" />
+                <input type="hidden" name="programType" value="@(Model.StudyProgram?.ProgramName ?? "Nuk ka program")" />
+                <input type="hidden" name="semester" value="@Model.Semester" />
+                <input type="hidden" name="amount" value="@Model.Amount" />
+
+                <div>
+                    <label for="cardholderName">Cardholder Name</label>
+                    <input type="text" id="cardholderName" name="cardholderName" required>
+                </div>
+                <div>
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" name="cardNumber" required>
+                </div>
+
+                <div class="flex-container">
+                    <div>
+                        <label for="expirationDate">Expiration Date</label>
+                        <input type="text" id="expirationDate" name="expirationDate" required placeholder="MM/YY">
+                    </div>
+                    <div>
+                        <label for="cvc">CVC</label>
+                        <input type="text" id="cvc" name="cvc" required>
+                    </div>
+                </div>
+
+                <button type="submit">Paguaj Tani</button>
+            </form>
+        </div>
+    </div>
+
+ 
+</body>
+</html>

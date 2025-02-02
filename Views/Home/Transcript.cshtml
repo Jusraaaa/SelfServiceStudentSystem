@@ -1,0 +1,36 @@
+﻿@model IEnumerable<SelfServiceStudentSystem.Models.Transcript>
+
+@{
+    ViewData["Title"] = "Transkripta e Notave";
+}
+
+<div style="background-color: #C6E7FF; padding: 20px; border-radius: 15px; max-width: 800px; margin: auto; margin-top: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    <h2 style="text-align: center; color: #000957;">Transkripta e Notave</h2>
+
+    <table class="table table-bordered" style="background-color: white; border-radius: 10px; overflow: hidden; margin-top: 20px;">
+        <thead style="background-color: #000957; color: white;">
+            <tr>
+                <th>Lënda</th>
+                <th>Semestri</th>
+                <th>Nota</th>
+                <th>Kredite</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Subject.SubjectName</td>
+                    <td>@item.Semester.SemesterNumber</td>
+                    <td>@item.Grade</td>
+                    <td>@item.Credits</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <a asp-action="DownloadTranscriptPdf" asp-route-studentId="@Model.FirstOrDefault()?.StudentId" class="btn btn-success" style="background-color: #000957; color: white; padding: 10px 20px; border-radius: 10px; text-decoration: none;">Shkarko PDF</a>
+        <a asp-action="Dashboard" asp-controller="Home" class="btn btn-secondary" style="background-color: #444; color: white; padding: 10px 20px; border-radius: 10px; text-decoration: none; margin-left: 10px;">Kthehu në Dashboard</a>
+    </div>
+</div>

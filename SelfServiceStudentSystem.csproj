@@ -1,0 +1,161 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Properties\wwwroot\images\finance.png" />
+    <None Remove="Properties\wwwroot\images\status.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Properties\wwwroot\AddStudent.html" />
+    <Content Include="Properties\wwwroot\css\site.css" />
+    <Content Include="Properties\wwwroot\favicon.ico" />
+    <Content Include="Properties\wwwroot\images\app-store.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Properties\wwwroot\images\background.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Properties\wwwroot\images\Confirm.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Properties\wwwroot\images\email.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Properties\wwwroot\images\finance.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Properties\wwwroot\images\flag-al.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Properties\wwwroot\images\flag-mk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Properties\wwwroot\images\flag-uk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Properties\wwwroot\images\MasterCard.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Properties\wwwroot\images\PayPalCard.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Properties\wwwroot\images\play-store.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Properties\wwwroot\images\smartphone-call.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Properties\wwwroot\images\status.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Properties\wwwroot\images\uni-logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Properties\wwwroot\images\university-logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Properties\wwwroot\images\user.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Properties\wwwroot\images\VisaCard.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Properties\wwwroot\js\site.js" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <Content Include="Properties\wwwroot\lib\bootstrap\LICENSE" />
+    <Content Include="Properties\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <Content Include="Properties\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Properties\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt" />
+    <Content Include="Properties\wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <Content Include="Properties\wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <Content Include="Properties\wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <Content Include="Properties\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <Content Include="Properties\wwwroot\lib\jquery-validation\LICENSE.md" />
+    <Content Include="Properties\wwwroot\lib\jquery\dist\jquery.js" />
+    <Content Include="Properties\wwwroot\lib\jquery\dist\jquery.min.js" />
+    <Content Include="Properties\wwwroot\lib\jquery\dist\jquery.min.map" />
+    <Content Include="Properties\wwwroot\lib\jquery\LICENSE.txt" />
+    <Content Include="Properties\wwwroot\ManagesStudents.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="iTextSharp" Version="5.5.13.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.16">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="PdfSharp" Version="6.1.1" />
+    <PackageReference Include="QuestPDF" Version="2024.12.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\wwwroot\fonts\FreeSans.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Properties\wwwroot\fonts\FreeSansBold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Properties\wwwroot\fonts\FreeSansBoldOblique.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Properties\wwwroot\fonts\FreeSansOblique.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

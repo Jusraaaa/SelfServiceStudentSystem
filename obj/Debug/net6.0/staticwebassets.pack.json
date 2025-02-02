@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\USER\\OneDrive\\Desktop\\CST\\.NET\\SelfServiceStudentSystem\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\SelfServiceStudentSystem.bundle.scp.css",
+      "PackagePath": "staticwebassets\\SelfServiceStudentSystem.bundle.scp.css"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.SelfServiceStudentSystem.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.SelfServiceStudentSystem.props",
+      "PackagePath": "build\\SelfServiceStudentSystem.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.SelfServiceStudentSystem.props",
+      "PackagePath": "buildMultiTargeting\\SelfServiceStudentSystem.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.SelfServiceStudentSystem.props",
+      "PackagePath": "buildTransitive\\SelfServiceStudentSystem.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

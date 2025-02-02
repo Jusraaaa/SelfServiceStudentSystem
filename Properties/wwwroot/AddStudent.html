@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shto Student</title>
+</head>
+<body>
+    <h1>Shto Student</h1>
+    <form id="addStudentForm">
+        <label for="firstName">Emri:</label><br>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+
+        <label for="lastName">Mbiemri:</label><br>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Fjalëkalimi:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <button type="submit">Shto Student</button>
+    </form>
+
+    <script>
+        document.getElementById("addStudentForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const student = {
+                firstName: document.getElementById("firstName").value,
+                lastName: document.getElementById("lastName").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value
+            };
+
+            fetch("https://localhost:7075/api/Students", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(student)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert("Studenti u shtua me sukses!");
+                console.log(data);
+            })
+            .catch(error => {
+                alert("Ndodhi një gabim gjatë shtimit të studentit.");
+                console.error(error);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿@model SelfServiceStudentSystem.Models.Payment
+
+<h2>Shto Pagesë të Re</h2>
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="StudentId">ID e Studentit</label>
+        <input asp-for="StudentId" class="form-control" />
+        <span asp-validation-for="StudentId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Semester">Semestri</label>
+        <input asp-for="Semester" class="form-control" />
+        <span asp-validation-for="Semester" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Amount">Shuma</label>
+        <input asp-for="Amount" class="form-control" />
+        <span asp-validation-for="Amount" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Ruaj</button>
+</form>
+<a asp-controller="Payments" asp-action="Index" class="btn btn-secondary">Kthehu te Lista</a>

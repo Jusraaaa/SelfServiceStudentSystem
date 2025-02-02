@@ -1,0 +1,27 @@
+﻿@model IEnumerable<SelfServiceStudentSystem.Models.Payment>
+
+<h2>Lista e Pagesave</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID e Pagesës</th>
+            <th>ID e Studentit</th>
+            <th>Semestri</th>
+            <th>Shuma</th>
+            <th>Data e Pagesës</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var payment in Model)
+        {
+            <tr>
+                <td>@payment.PaymentId</td>
+                <td>@payment.StudentId</td>
+                <td>@payment.Semester</td>
+                <td>@payment.Amount</td>
+                <td>@payment.PaymentDate.ToString("dd/MM/yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-controller="Payments" asp-action="Create" class="btn btn-primary">Shto Pagesë</a>

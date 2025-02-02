@@ -1,0 +1,335 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+            padding: 20px;
+            display:flex;
+            flex-direction:column;
+            min-height:100vh;
+            margin:auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+            .header h1 {
+                font-size: 18px;
+                margin: 0;
+            }
+
+            .header nav a {
+                margin: 0 10px;
+                text-decoration: none;
+                color: #007bff;
+                font-size: 14px;
+            }
+
+        .flags img {
+            width: 45px;
+            margin: 5px;
+        }
+
+        .flags a {
+            text-decoration: none;
+        }
+
+        h1 {
+            color: #0056b3;
+            margin: 20px 0;
+        }
+
+        .login-btn {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 20px 20px;
+            background-color: #133E87;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            text-decoration: none;
+            cursor: pointer;
+            width: 100px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+            .login-btn:hover {
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+                transform: scale(1.05);
+                transition: all 0.3s ease;
+            }
+
+
+        .support p {
+            margin: 10px 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .support a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+            .support a:hover {
+                text-decoration: underline;
+            }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        footer {
+            margin-top: auto;
+            background-color: #f8f9fa; 
+            text-align: center;
+            color: gray;
+            padding: 10px 0;
+            font-size: 14px;
+            border-top: 1px solid #ddd; 
+        }
+
+        footer {
+            margin-top: 30px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            text-align: center;
+            color: gray;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>SelfServiceStudentSystem</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Privacy</a>
+        </nav>
+    </div>
+  
+
+   
+    <div class="flags">
+        <a href="#" data-lang="sq" title="Shqip">
+            <img src="images/flag-al.png" alt="Shqip">
+        </a>
+        <a href="#" data-lang="mk" title="Македонски">
+            <img src="images/flag-mk.png" alt="Македонски">
+        </a>
+        <a href="#" data-lang="en" title="English">
+            <img src="images/flag-uk.png" alt="English">
+        </a>
+    </div>
+
+
+    <img src="/images/university-logo.png" alt="University Logo" class="university-logo">
+
+
+    <h1 id="title">SEE University Online Services</h1>
+    <p id="welcome">Welcome to SEE University Online Services</p>
+    <a href="@Url.Action("Homepage", "Home")" class="login-btn">Sign in</a>
+
+
+    
+
+
+    <div class="support">
+        <p id="cant-access">
+            <a href="#" onclick="openModal('modal-cant-access')">
+                <span class="icon">
+                    <img src="images/user.png" alt="Account Icon" style="width: 20px; vertical-align:middle; margin-right: 5px;">
+                </span>
+                <span class="text">Can't access My SEEU?</span>
+            </a>
+        </p>
+        <p id="reset-sms">
+            <a href="#" onclick="openModal('modal-reset-sms')">
+                <span class="icon">
+                    <img src="images/smartphone-call.png" alt="Phone Icon" style="width: 20px; vertical-align: middle; margin-right: 5px;">
+                </span>
+                <span class="text">Reset your password using Cell Phone and SMS.</span>
+            </a>
+        </p>
+        <p id="reset-email">
+            <a href="#" onclick="openModal('modal-reset-email')">
+                <span class="icon">
+                    <img src="images/email.png" alt="Email Icon" style="width: 20px; vertical-align: middle; margin-right: 5px;">
+                </span>
+                <span class="text">Reset your password using SEEU Webmail Account.</span>
+            </a>
+        </p>
+    </div>
+
+    <div id="modal-cant-access" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-cant-access')">&times;</span>
+            <h2></h2>
+            <p></p>
+            <input type="text" id="phone-number" placeholder="Enter your phone number" style="padding: 8px; width: 80%; margin: 10px 0;">
+            <button onclick="sendPhoneNumber()">Send</button>
+            <button onclick="closeModal('modal-cant-access')">Close</button>
+        </div>
+    </div>
+
+    <div id="modal-reset-sms" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-reset-sms')">&times;</span>
+            <h2></h2>
+            <p></p>
+            <input type="text" id="sms-phone-number" placeholder="Enter your phone number" style="padding: 8px; width: 80%; margin: 10px 0;">
+            <button onclick="sendSMS()">Send</button>
+            <button onclick="closeModal('modal-reset-sms')">Close</button>
+        </div>
+    </div>
+
+    <div id="modal-reset-email" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-reset-email')">&times;</span>
+            <h2></h2>
+            <p></p>
+            <input type="email" id="email-address" placeholder="Enter your email address" style="padding: 8px; width: 80%; margin: 10px 0;">
+            <button onclick="sendEmail()">Send</button>
+            <button onclick="closeModal('modal-reset-email')">Close</button>
+        </div>
+    </div>
+
+    <script>
+        const translations = {
+            en: {
+                title: "SEE University Online Services",
+                welcome: "Welcome to SEE University Online Services",
+                login: "Login",
+                cantAccess: "Can't access My SEEU?",
+                resetSMS: "Reset your password using Cell Phone and SMS.",
+                resetEmail: "Reset your password using SEEU Webmail Account."
+            },
+            sq: {
+                title: "Shërbimet Online të Universitetit",
+                welcome: "Mirësevini në Shërbimet Online të Universitetit",
+                login: "Hyr",
+                cantAccess: "Nuk mund të qaseni në My SEEU?",
+                resetSMS: "Rivendosni fjalëkalimin duke përdorur celular dhe SMS.",
+                resetEmail: "Rivendosni fjalëkalimin duke përdorur SEEU Webmail."
+            },
+            mk: {
+                title: "Услуги на Универзитетот",
+                welcome: "Добредојдовте во Онлајн Услугите на Универзитетот",
+                login: "Најава",
+                cantAccess: "Не можете да пристапите до My SEEU?",
+                resetSMS: "Ресетирајте ја лозинката користејќи мобилен телефон и СМС.",
+                resetEmail: "Ресетирајте ја лозинката користејќи SEEU Webmail."
+            }
+        };
+
+        let currentLanguage = "en";
+
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            document.getElementById("title").textContent = translations[lang].title;
+            document.getElementById("welcome").textContent = translations[lang].welcome;
+            document.getElementById("login-btn").textContent = translations[lang].login;
+            document.getElementById("cant-access").querySelector('.text').textContent = translations[lang].cantAccess;
+            document.getElementById("reset-sms").querySelector('.text').textContent = translations[lang].resetSMS;
+            document.getElementById("reset-email").querySelector('.text').textContent = translations[lang].resetEmail;
+        }
+
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.style.display = "block";
+            const titleKey = id === "modal-cant-access" ? "cantAccess" : id === "modal-reset-sms" ? "resetSMS" : "resetEmail";
+            modal.querySelector("h2").textContent = translations[currentLanguage][titleKey];
+            modal.querySelector("p").textContent = translations[currentLanguage][titleKey];
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+
+        document.querySelectorAll('.flags a').forEach(flag => {
+            flag.addEventListener('click', e => {
+                e.preventDefault();
+                changeLanguage(flag.getAttribute('data-lang'));
+            });
+        });
+
+        function sendPhoneNumber() {
+            const phoneNumber = document.getElementById("phone-number").value;
+            alert(`Phone number sent: ${phoneNumber}`);
+        }
+
+        function sendSMS() {
+            const smsPhoneNumber = document.getElementById("sms-phone-number").value;
+            alert(`SMS sent to: ${smsPhoneNumber}`);
+        }
+
+        function sendEmail() {
+            const emailAddress = document.getElementById("email-address").value;
+            alert(`Email sent to: ${emailAddress}`);
+        }
+
+        window.onclick = function (event) {
+            document.querySelectorAll(".modal").forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        };
+    </script>
+
+    <footer>
+        &copy; 2001-2025 South East European University
+    </footer>
+</body>
+</html>

@@ -1,0 +1,97 @@
+﻿@model SelfServiceStudentSystem.Models.Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paguaj për Semestra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #C6E7FF;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #F5F5F5;
+            padding: 30px 50px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin: 0 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #000957;
+        }
+
+        label {
+            font-weight: bold;
+            color: #000957;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 90%;
+            padding: 10px;
+            background-color: #000957;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 15px auto;
+            display: block;
+        }
+
+            button:hover {
+                background-color: #003366;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Paguaj për Semestra</h1>
+
+        <form method="post" action="/Home/ConfirmPayment">
+            <!-- Hidden input për siguri që studentId dërgohet -->
+            <input type="hidden" name="studentId" value="@Model.Id" />
+
+            <label for="studentId">ID e Studentit:</label>
+            <input type="text" id="studentId" value="@Model.Id" readonly>
+
+            <label for="program">Programi:</label>
+            <input type="text" id="program" name="programType" value="@(Model.StudyProgram != null ? Model.StudyProgram.ProgramName : "Nuk ka program")" readonly>
+
+            <label for="status">Statusi:</label>
+            <input type="text" id="status" value="@(Model.Status == 1 ? "Aktiv" : "Inaktiv")" readonly>
+
+            <label for="semester">Semestri:</label>
+            <input type="text" id="semester" name="semester" value="Semestri 1" readonly>
+
+            <label for="amount">Shuma për Pagesë (EUR):</label>
+            <input type="number" id="amount" name="amount" placeholder="Shkruaj shumën që dëshiron të paguash" required>
+
+            <button type="submit">Vazhdo me Pagesën</button>
+        </form>
+    </div>
+</body>
+</html>

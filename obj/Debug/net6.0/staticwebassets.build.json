@@ -1,0 +1,46 @@
+{
+  "Version": 1,
+  "Hash": "NzQ3sfANKcjmJgxaDO2vIhwBxy6uieLzH3RfJjLN7eE=",
+  "Source": "SelfServiceStudentSystem",
+  "BasePath": "_content/SelfServiceStudentSystem",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\USER\\OneDrive\\Desktop\\CST\\.NET\\SelfServiceStudentSystem\\obj\\Debug\\net6.0\\scopedcss\\bundle\\SelfServiceStudentSystem.styles.css",
+      "SourceId": "SelfServiceStudentSystem",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\USER\\OneDrive\\Desktop\\CST\\.NET\\SelfServiceStudentSystem\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/SelfServiceStudentSystem",
+      "RelativePath": "SelfServiceStudentSystem.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\USER\\OneDrive\\Desktop\\CST\\.NET\\SelfServiceStudentSystem\\obj\\Debug\\net6.0\\scopedcss\\bundle\\SelfServiceStudentSystem.styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\USER\\OneDrive\\Desktop\\CST\\.NET\\SelfServiceStudentSystem\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\SelfServiceStudentSystem.bundle.scp.css",
+      "SourceId": "SelfServiceStudentSystem",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\USER\\OneDrive\\Desktop\\CST\\.NET\\SelfServiceStudentSystem\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/SelfServiceStudentSystem",
+      "RelativePath": "SelfServiceStudentSystem.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\USER\\OneDrive\\Desktop\\CST\\.NET\\SelfServiceStudentSystem\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\SelfServiceStudentSystem.bundle.scp.css"
+    }
+  ]
+}

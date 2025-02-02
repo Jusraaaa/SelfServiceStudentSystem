@@ -1,0 +1,71 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagesa u Krye me Sukses!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #C6E7FF;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color: #000957; /* Ngjyra e errët në vend të gjelbër */
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 10px 0 20px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #000957;
+            color: white;
+            padding: 8px 20px; /* Butonat më të vegjël */
+            margin: 8px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px; /* Font më i vogël për butonat */
+            transition: background-color 0.3s ease;
+        }
+
+            .btn:hover {
+                background-color: #003366;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✅ Pagesa u Krye me Sukses!</h1>
+        <p>A dëshironi të ruani faturën ose të ktheheni në Dashboard?</p>
+
+        <a href="@Url.Action("DownloadPdf", "Home", new { studentId = ViewBag.StudentId, programType = ViewBag.ProgramType, semester = ViewBag.Semester, amount = ViewBag.Amount })" class="btn"> 📥 Ruaj Faturën</a>
+
+
+
+
+        <a href="/Home/Dashboard" class="btn">🏠 Kthehu në Dashboard</a>
+    </div>
+</body>
+</html>
