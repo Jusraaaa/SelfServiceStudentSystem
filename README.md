@@ -1,7 +1,7 @@
 
-# 📚 Self-Service Student System
+📚 Self-Service Student System
 
-## 🗒️ Përshkrimi
+**🗒️ Përshkrimi
 
 **Self-Service Student System** është një aplikacion i zhvilluar duke përdorur **ASP.NET Core** dhe **Entity Framework** që synon të ofrojë një platformë të thjeshtë dhe efikase për menaxhimin e shërbimeve studentore. Ky sistem ndihmon studentët të kryejnë detyra administrative pa pasur nevojë për ndërhyrje direkte nga administrata e universitetit.
 
